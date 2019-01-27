@@ -4,10 +4,14 @@
 <body>
   <h1>Body</h1>
   <p id="demo"></p>
+  <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
   <script>
     function myJavaScriptFunc(val){
       alert (val);
       document.getElementById("demo").innerHTML = val;
+    }
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
     }
   </script>
 </body>

@@ -2,8 +2,10 @@ package com.example.muhaimeen.webviewcommunication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //private WebView webView;
@@ -23,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
                 webView.loadUrl("javascript:myJavaScriptFunc('argumentPassingIn')"); //if passing in an object. Mapping may need to take place
             }
         });
+        webView.addJavascriptInterface(new JavaScriptInterface(this), "Android");
         setContentView(webView);
 
+
     }
+
 }
